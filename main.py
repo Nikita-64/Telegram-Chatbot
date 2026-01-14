@@ -5,7 +5,6 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from example import example
 
-# Read environment variables safely
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
@@ -15,10 +14,7 @@ if not BOT_TOKEN:
 if not OPENAI_API_KEY:
     raise ValueError("OPENAI_API_KEY environment variable not set")
 
-# Configure OpenAI
 openai.api_key = OPENAI_API_KEY
-
-# Initialize bot and dispatcher
 bot = Bot(token=BOT_TOKEN.strip())
 dp = Dispatcher()
 
