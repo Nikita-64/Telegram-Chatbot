@@ -15,8 +15,7 @@ def run():
     app.run(host="0.0.0.0", port=port)
 
 def self_ping():
-    """Ping itself every 10 minutes to prevent Render free tier from sleeping"""
-    url = os.getenv("SELF_URL")  # Your Render URL
+    url = os.getenv("SELF_URL") 
     if not url:
         print("SELF_URL not set, self-ping disabled")
         return
